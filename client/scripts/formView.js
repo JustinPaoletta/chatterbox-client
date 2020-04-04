@@ -6,11 +6,23 @@ var FormView = {
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
+  // let d = new Date();
+  // `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()}`
+
+
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
-    console.log('click!');
+    var message = document.getElementById('message').value;
+    //var roomname = documet get roomname
+
+    var formattedMessage = {
+      username: App.username,
+      roomname: 'dontmatter',
+      text: message,
+    };
+
+    Parse.create(formattedMessage);
   },
 
   setStatus: function(active) {

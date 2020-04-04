@@ -11,13 +11,14 @@ var App = {
     RoomsView.initialize();
     MessagesView.initialize();
 
+
+
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
     //EVENT HANDLER
     $('.button').bind('click', Rooms.add());
-    $('.submit').submit(Parse.create);
   },
 
   fetch: function(callback = ()=>{}) {

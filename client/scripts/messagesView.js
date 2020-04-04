@@ -3,13 +3,11 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-
+    $('#chats').bind('click', Friends.toggleStatus());
   },
 
   renderMessage: function(message) {
-    $('#chats').append(`<div>${message}</div>`);
-
-    $('#chats').bind('click', Friends.toggleStatus());
+    $('#chats').prepend(`<div>${message}</div>`);
   }
 
 };
