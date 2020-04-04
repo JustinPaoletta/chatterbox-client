@@ -15,13 +15,15 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
+    //EVENT HANDLER
+    $('.button').bind('click', Rooms.add());
+    $('.submit').submit(Parse.create);
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-      // examine the response from the server request:
-      console.log(data);
-
+      console.log(data); /// RESULTS
+      Messages.dataHandler(data);
       callback();
     });
   },
