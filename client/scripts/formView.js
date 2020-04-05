@@ -18,7 +18,7 @@ var FormView = {
 
     var formattedMessage = {
       username: App.username,
-      roomname: 'dontmatter',
+      roomname: App.room,
       text: message,
     };
 

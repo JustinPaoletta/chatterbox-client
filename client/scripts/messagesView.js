@@ -3,7 +3,7 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-    $('#chats').bind('click', Friends.toggleStatus());
+    $('#chats div').bind('click', Friends.toggleStatus());
   },
 
   renderMessage: function(message) {

@@ -24,10 +24,10 @@ class Message {
     let formated = `${mon}/${day}/${yr} - ${time}`; //"04/04/2020 - 00:50:53"
     console.log(JSON.stringify(this));
 
-    $('#chats').prepend(`<div data-roomname=${this.roomname} class='chat'">${this.username} : ${this.roomname} : ${this.text} : ${formated}</div>`);
+    $('#chats').prepend(`<div roomname=${this.roomname} username=${this.username} class='chat'"><p> <span class="${this.username}" onclick="change();"> ${this.username}</span> : ${this.roomname}</p><br><p>${this.text} : ${formated}</p></div>`);
 
+    $('#chats div').on('click', Friends.toggleStatus);
 
-    $('#chats').bind('click', Friends.toggleStatus());
   }
 
 }

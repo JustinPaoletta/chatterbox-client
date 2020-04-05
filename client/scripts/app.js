@@ -3,6 +3,7 @@ var App = {
   $spinner: $('.spinner img'),
 
   username: 'anonymous',
+  room: 'default',
 
   initialize: function() {
     App.username = window.location.search.substr(10);
@@ -12,13 +13,9 @@ var App = {
     MessagesView.initialize();
 
 
-
-    // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
-    //EVENT HANDLER
-    $('.button').bind('click', Rooms.add());
   },
 
   fetch: function(callback = ()=>{}) {

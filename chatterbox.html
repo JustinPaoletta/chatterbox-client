@@ -8,7 +8,6 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/underscore/underscore.js"></script>
     <script src="node_modules/sanitize-html/dist/sanitize-html.js"></script>
-    <script src="node_modules/moment/src/moment.js"></script>
     <script>
       // DO NOT MODIFY THIS CODE
       if (!/(&|\?)username=/.test(window.location.search)) {
@@ -32,7 +31,7 @@
       <div id="rooms">
         Rooms:
         <select></select>
-        <button class="button">Add Room</button>
+        <button class="button" onclick="addRoom()">Add Room</button>
       </div>
       <form action="#" id="send" method="post">
         <input type="text" name="message" id="message"/>
@@ -47,12 +46,16 @@
     <script src="client/scripts/messages.js"></script>
     <script src="client/scripts/formView.js"></script>
     <script src="client/scripts/roomsView.js"></script>
-    <script src="client/scripts/messageView.js"></script>
     <script src="client/scripts/messagesView.js"></script>
     <script src="client/scripts/message.js"></script>
 
     <script src="client/scripts/app.js"></script>
     <script>
+    let addRoom = function() {
+      let newRoom = prompt("Enter a new room name");
+      App.room = newRoom;
+      Rooms.add();
+    };
       $(() => App.initialize());
     </script>
 

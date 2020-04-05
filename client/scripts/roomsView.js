@@ -6,8 +6,9 @@ var RoomsView = {
   initialize: function() {
     $('select').change(function () {
       Rooms.filter(this.value);
-      // console.log(this.value);
     });
+
+    $('button').bind('click', Rooms.add());
   },
 
   renderRoom: function(roomName) {

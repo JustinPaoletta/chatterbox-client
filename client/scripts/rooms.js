@@ -1,7 +1,12 @@
 var Rooms = {
 
   add: function() {
-    // window.prompt
+    console.log("Add button clicked");
+    // App.roomname = prompt("Enter a new room name");
+    // prompt("Enter a new room name");
+    console.log(App.room);
+    this.filter(App.room);
+    // addRoom();
   },
 
   render: function(rooms) {
@@ -11,7 +16,9 @@ var Rooms = {
   },
 
   filter: function(room) {
-    console.log(`${room}`);
-    // $(room).addClass('hidden');
+    console.log(room);
+    $( `#chats div[roomname!=${room}]` ).addClass('hidden');
+    $( `#chats div[roomname=${room}]` ).removeClass('hidden');
+
   }
 };
